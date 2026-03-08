@@ -40,4 +40,19 @@ public class testLoginPage {
         driver.quit();
     }
 
+    @Test
+    public void testLoginPageFireFox(){
+
+        WebDriver driver = DriverFactory.createWebDriver("firefox");
+
+        driver.get("https://www.saucedemo.com/");
+
+        LoginPage login = new LoginPage(driver);
+
+        login.login("wrongUser", "wrongPass");
+
+        assertThat(login.getErrorMesagge(), containsString("Username and password do not match"));
+
+        driver.quit();
+    }
 }
