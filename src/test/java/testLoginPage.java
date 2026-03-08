@@ -17,8 +17,27 @@ public class testLoginPage {
 
         LoginPage login = new LoginPage(driver);
 
+        login.login("wrongUser", "wrongPass");
+
         assertThat(login.getErrorMesagge(), containsString("Username and password do not match"));
 
         driver.quit();
     }
+
+    @Test
+    public void testLoginPageEdge(){
+
+        WebDriver driver = DriverFactory.createWebDriver("edge");
+
+        driver.get("https://www.saucedemo.com/");
+
+        LoginPage login = new LoginPage(driver);
+
+        login.login("wrongUser", "wrongPass");
+
+        assertThat(login.getErrorMesagge(), containsString("Username and password do not match"));
+
+        driver.quit();
+    }
+
 }
