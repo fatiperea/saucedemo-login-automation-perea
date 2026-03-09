@@ -13,12 +13,9 @@ public class DriverFactory {
             WebDriverManager.chromedriver().setup();
             return new ChromeDriver();
         }else if (browser.equalsIgnoreCase("edge")){
-            WebDriverManager.edgedriver().setup();
+            System.setProperty("webdriver.edge.driver", "drivers/msedgedriver.exe");
             return new EdgeDriver();
-        }/*else if (browser.equalsIgnoreCase("firefox")){
-            WebDriverManager.firefoxdriver().setup();
-            return  new FirefoxDriver();
-        }*/
+        }
         throw new IllegalArgumentException(browser + "Not supported");
 
     }
