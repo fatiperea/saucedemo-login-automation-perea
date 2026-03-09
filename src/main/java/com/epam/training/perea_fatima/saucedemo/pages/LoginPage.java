@@ -1,4 +1,4 @@
-package com.epam.training.perea_fatima.saucedemo.utils.pages;
+package com.epam.training.perea_fatima.saucedemo.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

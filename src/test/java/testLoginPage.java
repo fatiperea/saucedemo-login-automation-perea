@@ -1,5 +1,5 @@
 import com.epam.training.perea_fatima.saucedemo.utils.DriverFactory;
-import com.epam.training.perea_fatima.saucedemo.utils.pages.LoginPage;
+import com.epam.training.perea_fatima.saucedemo.pages.LoginPage;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.WebDriver;
