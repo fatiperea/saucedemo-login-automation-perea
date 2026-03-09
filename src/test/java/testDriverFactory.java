@@ -17,25 +17,4 @@ public class testDriverFactory {
         assertThat(driver.getTitle(), containsString("Swag Labs"));
         driver.quit();
     }
-
-    /*@Test
-    public void testEdgeDriver() {
-
-        WebDriver driver = DriverFactory.createWebDriver("edge");
-        driver.get("https://www.saucedemo.com/");
-        assertThat(driver.getTitle(), containsString("Swag Labs"));
-        driver.quit();
-    }
-
-    @Test
-    public void testFirefoxDriver() {
-
-        WebDriver driver = DriverFactory.createWebDriver("firefox");
-        driver.get("https://www.saucedemo.com/");
-        assertThat(driver.getTitle(), containsString("Swag Labs"));
-        driver.quit();
-    }*/
-
-
-
 }
