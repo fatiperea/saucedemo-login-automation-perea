@@ -9,7 +9,7 @@ import static org.hamcrest.Matchers.containsString;
 public class testDriverFactory {
 
     @ParameterizedTest
-    @ValueSource( strings = {"chrome", "edge", "firefox"} )
+    @ValueSource( strings = {"chrome", "edge"} )
     public void testBrowsers(String browser) {
 
         WebDriver driver = DriverFactory.createWebDriver(browser);

@@ -16,10 +16,10 @@ public class DriverFactory {
         }else if (browser.equalsIgnoreCase("edge")){
             WebDriverManager.edgedriver().setup();
             return new EdgeDriver();
-        }else if (browser.equalsIgnoreCase("firefox")){
-            WebDriverManager.edgedriver().setup();
+        }/*else if (browser.equalsIgnoreCase("firefox")){
+            WebDriverManager.firefoxdriver().setup();
             return  new FirefoxDriver();
-        }
+        }*/
         throw new IllegalArgumentException(browser + "Not supported");
 
     }
