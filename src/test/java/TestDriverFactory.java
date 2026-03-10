@@ -6,7 +6,7 @@ import com.epam.training.perea_fatima.saucedemo.utils.DriverFactory;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 
-public class testDriverFactory {
+public class TestDriverFactory {
 
     @ParameterizedTest
     @ValueSource( strings = {"chrome", "edge"} )
