@@ -1,8 +1,7 @@
-import com.epam.training.perea_fatima.saucedemo.utils.DriverFactory;
 import com.epam.training.perea_fatima.saucedemo.pages.LoginPage;
+import com.epam.training.perea_fatima.saucedemo.utils.DriverFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.openqa.selenium.WebDriver;
@@ -29,7 +28,7 @@ public class TestLoginPage {
             "UC-3, edge, standard_user, secret_sauce",
     })
 
-    public void testLoginPage(String uc, String browser, String user, String password){
+    public void testLoginPage(String uc, String browser, String user, String password) {
 
         logger.info("Starting test case {} on {}", uc, browser);
 
@@ -45,7 +44,7 @@ public class TestLoginPage {
 
         logger.info("Attempted login with user='{}' and password='{}'", user, password);
 
-        switch (uc){
+        switch (uc) {
 
             case "UC-1":
                 logger.info("Validating UC-1: both empty");
