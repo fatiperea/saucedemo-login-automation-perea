@@ -10,7 +10,6 @@ import java.util.List;
 
 public class LoginPage extends AbstractPage{
 
-    private static final Logger logger = LogManager.getLogger(LoginPage.class);
     private final String PAGE_URL ="https://www.saucedemo.com/";
 
     private By username = By.id("user-name");
@@ -18,7 +17,6 @@ public class LoginPage extends AbstractPage{
     private By loginBtn = By.id("login-button");
 
     private By errorMessage = By.cssSelector("h3[data-test='error']");
-    private By pageTitle = By.className("app_logo");
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -60,10 +58,6 @@ public class LoginPage extends AbstractPage{
             return "";
         }
         return elements.get(0).getText();
-    }
-
-    public String getPageTitle() {
-        return driver.findElement(pageTitle).getText();
     }
 
 }

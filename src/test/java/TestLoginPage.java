@@ -1,4 +1,5 @@
 import com.epam.training.perea_fatima.saucedemo.pages.LoginPage;
+import com.epam.training.perea_fatima.saucedemo.pages.MainPage;
 import com.epam.training.perea_fatima.saucedemo.utils.DriverFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -58,7 +59,8 @@ public class TestLoginPage {
 
             case "UC-3":
                 logger.info("Validating // UC-3: valid login");
-                assertThat(login.getPageTitle(), containsString("Swag Labs"));
+                MainPage mainPage = new MainPage(driver);
+                assertThat(mainPage.getPageTitle(), containsString("Swag Labs"));
                 break;
         }
         driver.quit();
