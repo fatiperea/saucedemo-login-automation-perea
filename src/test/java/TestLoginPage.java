@@ -18,7 +18,7 @@ public class TestLoginPage {
     @CsvSource({
             // UC-1: both empty
             "UC-1, chrome, '', ''",
-            "UC-1, edge, , ",
+            "UC-1, edge, '', ''",
 
             // UC-2: empty password
             "UC-2, chrome, user, ''",
