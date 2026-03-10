@@ -59,7 +59,7 @@ public class TestLoginPage {
 
             case "UC-3":
                 logger.info("Validating // UC-3: valid login");
-                assertThat(login.getErrorMessage(), containsString("Swag Labs"));
+                assertThat(login.getPageTitle(), containsString("Swag Labs"));
                 break;
         }
         driver.quit();
