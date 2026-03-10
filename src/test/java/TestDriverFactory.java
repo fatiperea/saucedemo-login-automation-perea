@@ -1,7 +1,7 @@
+import com.epam.training.perea_fatima.saucedemo.utils.DriverFactory;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.WebDriver;
-import com.epam.training.perea_fatima.saucedemo.utils.DriverFactory;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
@@ -9,7 +9,7 @@ import static org.hamcrest.Matchers.containsString;
 public class TestDriverFactory {
 
     @ParameterizedTest
-    @ValueSource( strings = {"chrome", "edge"} )
+    @ValueSource(strings = {"chrome", "edge"})
     public void testBrowsers(String browser) {
 
         WebDriver driver = DriverFactory.createWebDriver(browser);

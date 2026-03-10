@@ -7,12 +7,12 @@ import org.openqa.selenium.edge.EdgeDriver;
 
 public class DriverFactory {
 
-    public static WebDriver createWebDriver(String browser){
+    public static WebDriver createWebDriver(String browser) {
 
-        if (browser.equalsIgnoreCase("chrome")){
+        if (browser.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             return new ChromeDriver();
-        }else if (browser.equalsIgnoreCase("edge")){
+        } else if (browser.equalsIgnoreCase("edge")) {
             System.setProperty("webdriver.edge.driver", "drivers/msedgedriver.exe");
             return new EdgeDriver();
         }
