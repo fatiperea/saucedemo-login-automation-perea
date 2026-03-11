@@ -2,7 +2,12 @@
 
 ## Overview
 
-This project implements an **automated login test** for a sample web application using:
+This project implements an **automated login test** for a sample web application: [SauceDemo](https://www.saucedemo.com/) 
+
+## Use Cases
+- **UC‑1**: Login with empty credentials → message "Username is required".
+- **UC‑2**: Login with username but no password → message "Password is required".
+- **UC‑3**: Valid login → title "Swag Labs".
 
 Automated testing project using:
 
@@ -26,7 +31,6 @@ git clone <repo-url>
 You can run the tests directly from your IDE or using Maven’s test lifecycle.
 
 ## 📝 Notes
-- All dependencies are defined in `pom.xml`.  
-- SLF4J warnings may appear but do not affect test execution.  
+- All dependencies are defined in `pom.xml`.   
 - The login flow is a basic example and can be extended to more complex scenarios.
 
