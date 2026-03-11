@@ -3,9 +3,9 @@ package com.epam.training.perea_fatima.saucedemo.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class MainPage extends AbstractPage{
+public class MainPage extends AbstractPage {
 
-    private final String PAGE_URL ="https://www.saucedemo.com/inventory.html";
+    private final String PAGE_URL = "https://www.saucedemo.com/inventory.html";
     private final By pageTitle = By.className("app_logo");
 
     public MainPage(WebDriver driver) {
@@ -20,7 +20,7 @@ public class MainPage extends AbstractPage{
     }
 
     public String getPageTitle() {
-        String title= driver.findElement(pageTitle).getText();
+        String title = driver.findElement(pageTitle).getText();
         logger.info("Main page title: ", title);
         return title;
     }

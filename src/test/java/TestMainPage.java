@@ -3,7 +3,6 @@ import com.epam.training.perea_fatima.saucedemo.pages.MainPage;
 import com.epam.training.perea_fatima.saucedemo.utils.DriverFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +13,7 @@ import static org.hamcrest.Matchers.containsString;
 public class TestMainPage {
 
     private static final Logger logger = LogManager.getLogger(TestMainPage.class);
-    private static final String PASSWORD="secret_sauce";
+    private static final String PASSWORD = "secret_sauce";
 
     @ParameterizedTest
     @CsvSource({
@@ -29,7 +28,7 @@ public class TestMainPage {
             "chrome, performance_glitch_user",
             "edge, performance_glitch_user"
     })
-    public void testMainPage(String browser, String user){
+    public void testMainPage(String browser, String user) {
 
         logger.info("Starting test case {} on {}", browser, user);
 

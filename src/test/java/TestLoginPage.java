@@ -13,7 +13,7 @@ import static org.hamcrest.Matchers.containsString;
 public class TestLoginPage {
 
     private static final Logger logger = LogManager.getLogger(TestLoginPage.class);
-    private static final String PASSWORD="secret_sauce";
+    private static final String PASSWORD = "secret_sauce";
 
     @ParameterizedTest
     @CsvSource({
@@ -50,7 +50,7 @@ public class TestLoginPage {
         logger.debug("Navigated to login page");
 
         LoginPage login = new LoginPage(driver);
-        String password= "";
+        String password = "";
         if ("UC-3".equals(uc)) password = PASSWORD;
 
         login.login(user, password);

@@ -1,12 +1,14 @@
 package com.epam.training.perea_fatima.saucedemo.pages;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 import java.util.List;
 
-public class LoginPage extends AbstractPage{
+public class LoginPage extends AbstractPage {
 
-    private final String PAGE_URL ="https://www.saucedemo.com/";
+    private final String PAGE_URL = "https://www.saucedemo.com/";
 
     private By username = By.id("user-name");
     private By password = By.id("password");

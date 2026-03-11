@@ -11,6 +11,8 @@ public abstract class AbstractPage {
 
     protected abstract AbstractPage openPage();
 
-    protected AbstractPage(WebDriver driver){ this.driver = driver;}
+    protected AbstractPage(WebDriver driver) {
+        this.driver = driver;
+    }
 
 }
