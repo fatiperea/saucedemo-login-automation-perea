@@ -39,11 +39,11 @@ public class LoginPage extends AbstractPage{
         logger.info("Login button clicked");
     }
 
-    public void login(String username, String password) {
-
+    public MainPage login(String username, String password) {
         enterUsername(username);
         enterPassword(password);
         clickLogin();
+        return new MainPage(driver);
     }
 
     public String getErrorMessage() {
