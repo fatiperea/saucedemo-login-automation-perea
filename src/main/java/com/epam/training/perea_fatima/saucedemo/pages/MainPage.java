@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class MainPage extends AbstractPage{
 
     private final String PAGE_URL ="https://www.saucedemo.com/inventory.html";
-    private final By pageTitle = By.className("title");
+    private final By pageTitle = By.className("app_logo");
 
     public MainPage(WebDriver driver) {
         super(driver);
