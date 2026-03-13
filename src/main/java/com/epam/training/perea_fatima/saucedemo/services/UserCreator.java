@@ -30,4 +30,13 @@ public class UserCreator {
         return usernames.stream().map(user -> new User(user, password));
     }
 
+    public static User validUser(){
+
+        String password=TestDataReader.getValidPassword();
+        String username=TestDataReader.getAllValidUser().get(0);
+
+        return new User(username, password);
+
+    }
+
 }

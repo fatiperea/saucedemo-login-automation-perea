@@ -22,8 +22,7 @@ public class LoginPage extends AbstractPage {
         logger.info("Login initiated");
     }
 
-    @Override
-    protected AbstractPage openPage() {
+    public LoginPage openPage() {
         driver.navigate().to(PAGE_URL);
         logger.info("Login page opened");
         return this;
@@ -65,7 +64,6 @@ public class LoginPage extends AbstractPage {
         driver.findElement(By.id("password")).sendKeys(user.getPassword());
         driver.findElement(By.id("password")).clear();
         driver.findElement(By.id("login-button")).click();
-
 
     }
 

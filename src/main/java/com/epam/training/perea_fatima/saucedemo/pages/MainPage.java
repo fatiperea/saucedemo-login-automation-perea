@@ -12,8 +12,7 @@ public class MainPage extends AbstractPage {
         super(driver);
     }
 
-    @Override
-    protected AbstractPage openPage() {
+    public MainPage openPage() {
         driver.navigate().to(PAGE_URL);
         logger.info("Main page opened");
         return this;

@@ -9,8 +9,6 @@ public abstract class AbstractPage {
     protected final Logger logger = LogManager.getLogger(getClass());
     protected WebDriver driver;
 
-    protected abstract AbstractPage openPage();
-
     protected AbstractPage(WebDriver driver) {
         this.driver = driver;
     }

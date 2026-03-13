@@ -43,43 +43,38 @@ public class LoginPageTestWithUser {
     @ParameterizedTest
     @ValueSource(strings = {"chrome","edge"})
     void loginWithEmptyCredentialsMustFail(String browser){
-
+        logger.info("Validating UC-1: both empty");
         setUp(browser);
         User user= UserCreator.emptyCredentials();
         login.login(user);
-
         assertEquals("Username is required",login.getErrorMessage());
+        close();
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"chrome","edge"})
     void loginWithEmptyPasswordsMustFail(String browser){
-
+        logger.info("Validating UC-2: cleared password");
         setUp(browser);
-        User user= UserCreator.emptyPassword("standard_user");
-        login.login(user);
-
+        User user= UserCreator.validUser();
+        login.loginClearedPassword(user);
         assertEquals("Password is required", login.getErrorMessage());
-
+        close();
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"chrome","edge"})
     void loginWithValidCredentials(String browser){
-
+        logger.info("Validating // UC-3: valid login");
         setUp(browser);
         for (User u : UserCreator.validUsers().toList()){
 
             MainPage mainPage= login.login(u);
             assertEquals("Swag Labs", mainPage.getPageTitle());
-            driver.navigate().to("https://www.saucedemo.com/inventory.html");
+            mainPage.openPage();
 
         }
-        //login.login(user);
-
-
-
-
+        close();
 
     }
 }
