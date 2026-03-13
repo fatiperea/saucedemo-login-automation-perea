@@ -18,12 +18,17 @@ public class TestDataReader {
         }
     }
 
-    public static String getValidPassword(){ return resourceBundle.getString("valid.password"); };
+    public static String getValidPassword() {
+        return resourceBundle.getString("valid.password");
+    }
 
-    public static List<String> getAllValidUser(){ return Arrays.asList(resourceBundle.getString("valid.users").split(","));
-    };
+    ;
 
+    public static List<String> getAllValidUser() {
+        return Arrays.asList(resourceBundle.getString("valid.users").split(","));
+    }
 
+    ;
 
 
 }

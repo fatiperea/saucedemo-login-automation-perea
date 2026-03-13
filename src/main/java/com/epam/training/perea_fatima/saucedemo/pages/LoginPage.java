@@ -8,7 +8,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.List;
 
 public class LoginPage extends AbstractPage {
 
@@ -51,7 +50,7 @@ public class LoginPage extends AbstractPage {
         return new MainPage(driver);
     }
 
-    public MainPage login(User user){
+    public MainPage login(User user) {
 
         enterUsername(user.getUsername());
         enterPassword(user.getPassword());
@@ -61,7 +60,7 @@ public class LoginPage extends AbstractPage {
         return new MainPage(driver);
     }
 
-    public void loginClearedPassword(User user){
+    public void loginClearedPassword(User user) {
 
         driver.findElement(By.id("user-name")).sendKeys(user.getUsername());
         WebElement passwordField = driver.findElement(By.id("password"));
