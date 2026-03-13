@@ -4,7 +4,10 @@ import com.epam.training.perea_fatima.saucedemo.models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class LoginPage extends AbstractPage {
@@ -75,12 +78,20 @@ public class LoginPage extends AbstractPage {
 
     public String getErrorMessage() {
 
-        List<WebElement> elements = driver.findElements(errorMessage);
+        /*List<WebElement> elements = driver.findElements(errorMessage);
 
         if (elements.isEmpty()) {
             return "";
         }
-        return elements.get(0).getText();
+        return elements.get(0).getText();*/
+
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            WebElement error = wait.until(ExpectedConditions.visibilityOfElementLocated(errorMessage));
+            return error.getText();
+        } catch (Exception e) {
+            return "";
+        }
     }
 
 }

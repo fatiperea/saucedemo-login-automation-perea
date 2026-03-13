@@ -40,7 +40,7 @@ public class LoginPageTestWithUser {
             logger.info("Closed browser");
         }
     }
-
+    /*
     @ParameterizedTest
     @ValueSource(strings = {"chrome","edge"})
     void loginWithEmptyCredentialsMustFail(String browser){
@@ -51,19 +51,19 @@ public class LoginPageTestWithUser {
         //assertEquals("Epic sadface: Username is required",login.getErrorMessage());
         assertThat(login.getErrorMessage(), containsString("Username is required"));
         close();
-    }
-/*
+    }*/
+
     @ParameterizedTest
     @ValueSource(strings = {"chrome","edge"})
     void loginWithEmptyPasswordsMustFail(String browser){
         logger.info("Validating UC-2: cleared password");
         setUp(browser);
-        User user= UserCreator.validUser();
+        User user= UserCreator.validUserEmptyPassword();
         login.loginClearedPassword(user);
         assertThat(login.getErrorMessage(), containsString("Password is required"));
         //assertEquals("Epic sadface: Password is required", login.getErrorMessage());
         close();
-    }*/
+    }
 
     /*@ParameterizedTest
     @ValueSource(strings = {"chrome","edge"})
