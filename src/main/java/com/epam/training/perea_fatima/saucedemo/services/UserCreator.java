@@ -3,11 +3,12 @@ package com.epam.training.perea_fatima.saucedemo.services;
 import com.epam.training.perea_fatima.saucedemo.models.User;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class UserCreator {
 
-    //public static final String TESTDATA_USER_NAME = "valid.users";
+    public static final String TESTDATA_USER_NAME = "valid.users";
     public static final String TESTDATA_USER_PASSWORD = "valid.password";
 
     public static User emptyCredentials(){
@@ -21,7 +22,7 @@ public class UserCreator {
 
     }
 
-    public static Stream<User> validUsers(){
+    public static Stream<User> acceptedUsers(){
 
         String password=TestDataReader.getValidPassword();
 
@@ -38,4 +39,8 @@ public class UserCreator {
 
     }
 
+    public static User validUser() {
+
+        return new User("standard_user", TestDataReader.getValidPassword());
+    }
 }

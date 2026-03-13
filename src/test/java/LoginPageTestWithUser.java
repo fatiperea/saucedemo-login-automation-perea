@@ -40,7 +40,7 @@ public class LoginPageTestWithUser {
             logger.info("Closed browser");
         }
     }
-    /*
+
     @ParameterizedTest
     @ValueSource(strings = {"chrome","edge"})
     void loginWithEmptyCredentialsMustFail(String browser){
@@ -48,10 +48,9 @@ public class LoginPageTestWithUser {
         setUp(browser);
         User user= UserCreator.emptyCredentials();
         login.login(user);
-        //assertEquals("Epic sadface: Username is required",login.getErrorMessage());
         assertThat(login.getErrorMessage(), containsString("Username is required"));
         close();
-    }*/
+    }
 
     @ParameterizedTest
     @ValueSource(strings = {"chrome","edge"})
@@ -61,25 +60,23 @@ public class LoginPageTestWithUser {
         User user= UserCreator.validUserEmptyPassword();
         login.loginClearedPassword(user);
         assertThat(login.getErrorMessage(), containsString("Password is required"));
-        //assertEquals("Epic sadface: Password is required", login.getErrorMessage());
         close();
     }
 
-    /*@ParameterizedTest
+    @ParameterizedTest
     @ValueSource(strings = {"chrome","edge"})
     void loginWithValidCredentials(String browser){
         logger.info("Validating // UC-3: valid login");
         setUp(browser);
-        for (User u : UserCreator.validUsers().toList()){
 
-            MainPage mainPage= login.login(u);
+        User user = UserCreator.validUser();
+        MainPage mainPage= login.login(user);
+
             logger.info("Validating // UC-3: valid login" + mainPage.getPageTitle());
             assertEquals("https://www.saucedemo.com/inventory.html", driver.getCurrentUrl());
             assertEquals("Swag Labs", mainPage.getPageTitle());
 
-        }
-        //driver.quit();
         close();
 
-    }*/
+    }
 }
