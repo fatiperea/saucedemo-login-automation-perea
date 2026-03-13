@@ -20,7 +20,7 @@ public class MainPage extends AbstractPage {
 
     public String getPageTitle() {
         String title = driver.findElement(pageTitle).getText();
-        logger.info("Main page title: ", title);
+        logger.info("Main page title: " + title);
         return title;
     }
 }

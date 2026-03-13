@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 
 public class UserCreator {
 
-    public static final String TESTDATA_USER_NAME = "valid.user";
+    //public static final String TESTDATA_USER_NAME = "valid.users";
     public static final String TESTDATA_USER_PASSWORD = "valid.password";
 
     public static User emptyCredentials(){

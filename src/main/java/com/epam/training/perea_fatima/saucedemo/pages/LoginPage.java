@@ -60,9 +60,15 @@ public class LoginPage extends AbstractPage {
 
     public void loginClearedPassword(User user){
 
-        driver.findElement(By.id("user-name")).sendKeys(user.getUsername());
+        /*driver.findElement(By.id("user-name")).sendKeys(user.getUsername());
         driver.findElement(By.id("password")).sendKeys(user.getPassword());
         driver.findElement(By.id("password")).clear();
+        driver.findElement(By.id("login-button")).click();*/
+
+        driver.findElement(By.id("user-name")).sendKeys(user.getUsername());
+        WebElement passwordField = driver.findElement(By.id("password"));
+        passwordField.sendKeys(user.getPassword());
+        passwordField.clear();
         driver.findElement(By.id("login-button")).click();
 
     }
