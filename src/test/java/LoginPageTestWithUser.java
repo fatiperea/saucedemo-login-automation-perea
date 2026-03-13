@@ -19,17 +19,17 @@ import static org.hamcrest.Matchers.containsString;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class LoginPageTestWithUser {
+public class LoginPageTestWithUser extends AbstractTest {
 
     private static final Logger logger = LogManager.getLogger(LoginPageTestWithUser.class);
-    private WebDriver driver;
-    private LoginPage login;
+    //private WebDriver driver;
+    //private LoginPage login;
 
-    void setUp(String browser){
+    /*void setUp(String browser){
 
         driver=DriverFactory.createWebDriver(browser);
         driver.get("https://www.saucedemo.com/");
-        login = new LoginPage(driver).openPage();
+
     }
 
     @AfterEach
@@ -39,17 +39,18 @@ public class LoginPageTestWithUser {
             driver.quit();
             logger.info("Closed browser");
         }
-    }
+    }*/
 
     @ParameterizedTest
     @ValueSource(strings = {"chrome","edge"})
     void loginWithEmptyCredentialsMustFail(String browser){
         logger.info("Validating UC-1: both empty");
         setUp(browser);
+        LoginPage login = getLoginPage();
         User user= UserCreator.emptyCredentials();
         login.login(user);
         assertThat(login.getErrorMessage(), containsString("Username is required"));
-        close();
+        closeDriver();
     }
 
     @ParameterizedTest
@@ -57,10 +58,11 @@ public class LoginPageTestWithUser {
     void loginWithEmptyPasswordsMustFail(String browser){
         logger.info("Validating UC-2: cleared password");
         setUp(browser);
+        LoginPage login = getLoginPage();
         User user= UserCreator.validUserEmptyPassword();
         login.loginClearedPassword(user);
         assertThat(login.getErrorMessage(), containsString("Password is required"));
-        close();
+        closeDriver();
     }
 
     @ParameterizedTest
@@ -68,7 +70,7 @@ public class LoginPageTestWithUser {
     void loginWithValidCredentials(String browser){
         logger.info("Validating // UC-3: valid login");
         setUp(browser);
-
+        LoginPage login = getLoginPage();
         User user = UserCreator.validUser();
         MainPage mainPage= login.login(user);
 
@@ -76,7 +78,7 @@ public class LoginPageTestWithUser {
             assertEquals("https://www.saucedemo.com/inventory.html", driver.getCurrentUrl());
             assertEquals("Swag Labs", mainPage.getPageTitle());
 
-        close();
+        closeDriver();
 
     }
 }

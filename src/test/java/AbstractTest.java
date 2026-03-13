@@ -6,15 +6,20 @@ import org.openqa.selenium.WebDriver;
 
 public abstract class AbstractTest {
 
+    protected static final String MAIN_PAIGE= "https://www.saucedemo.com/";
     protected WebDriver driver;
     protected Logger logger = LogManager.getLogger(MainPageTestWithUser.class);
 
     protected void setUp(String browser) {
 
         driver= DriverFactory.createWebDriver(browser);
-        driver.get("https://www.saucedemo.com/");
+        driver.get(MAIN_PAIGE);
         logger.info("Browser started" + browser);
+        logger.info("Navigated to " + MAIN_PAIGE);
+    }
 
+    protected LoginPage getLoginPage() {
+        return new  LoginPage(driver);
     }
 
     protected void closeDriver(){

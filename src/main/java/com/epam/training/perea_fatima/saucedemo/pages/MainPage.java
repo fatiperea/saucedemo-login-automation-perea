@@ -12,6 +12,10 @@ public class MainPage extends AbstractPage {
         super(driver);
     }
 
+    public String getPAGE_URL() {
+        return PAGE_URL;
+    }
+
     public MainPage openPage() {
         driver.navigate().to(PAGE_URL);
         logger.info("Main page opened");
