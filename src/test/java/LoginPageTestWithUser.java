@@ -22,24 +22,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class LoginPageTestWithUser extends AbstractTest {
 
     private static final Logger logger = LogManager.getLogger(LoginPageTestWithUser.class);
-    //private WebDriver driver;
-    //private LoginPage login;
-
-    /*void setUp(String browser){
-
-        driver=DriverFactory.createWebDriver(browser);
-        driver.get("https://www.saucedemo.com/");
-
-    }
-
-    @AfterEach
-    void close(){
-
-        if (driver != null){
-            driver.quit();
-            logger.info("Closed browser");
-        }
-    }*/
 
     @ParameterizedTest
     @ValueSource(strings = {"chrome","edge"})

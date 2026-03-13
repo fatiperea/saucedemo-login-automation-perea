@@ -63,11 +63,6 @@ public class LoginPage extends AbstractPage {
 
     public void loginClearedPassword(User user){
 
-        /*driver.findElement(By.id("user-name")).sendKeys(user.getUsername());
-        driver.findElement(By.id("password")).sendKeys(user.getPassword());
-        driver.findElement(By.id("password")).clear();
-        driver.findElement(By.id("login-button")).click();*/
-
         driver.findElement(By.id("user-name")).sendKeys(user.getUsername());
         WebElement passwordField = driver.findElement(By.id("password"));
         passwordField.sendKeys(user.getPassword());
@@ -77,13 +72,6 @@ public class LoginPage extends AbstractPage {
     }
 
     public String getErrorMessage() {
-
-        /*List<WebElement> elements = driver.findElements(errorMessage);
-
-        if (elements.isEmpty()) {
-            return "";
-        }
-        return elements.get(0).getText();*/
 
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
