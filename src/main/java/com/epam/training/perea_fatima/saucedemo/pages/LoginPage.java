@@ -1,5 +1,6 @@
 package com.epam.training.perea_fatima.saucedemo.pages;
 
+import com.epam.training.perea_fatima.saucedemo.models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -45,6 +46,16 @@ public class LoginPage extends AbstractPage {
         enterUsername(username);
         enterPassword(password);
         clickLogin();
+        return new MainPage(driver);
+    }
+
+    public MainPage login(User user){
+
+        enterUsername(user.getUsername());
+        enterPassword(user.getPassword());
+
+        clickLogin();
+
         return new MainPage(driver);
     }
 

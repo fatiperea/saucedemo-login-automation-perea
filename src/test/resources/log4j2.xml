@@ -8,7 +8,7 @@
 
     <Loggers>
         <Logger name="io.github.bonigarcia.wdm" level="info"/>
-        <Logger name="TestLoginPage" level="debug"/>
+        <Logger name="legacy.TestLoginPage" level="debug"/>
         <Root level="info">
             <AppenderRef ref="Console"/>
         </Root>

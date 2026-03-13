@@ -1,3 +1,5 @@
+package legacy;
+
 import com.epam.training.perea_fatima.saucedemo.pages.LoginPage;
 import com.epam.training.perea_fatima.saucedemo.pages.MainPage;
 import com.epam.training.perea_fatima.saucedemo.utils.DriverFactory;
