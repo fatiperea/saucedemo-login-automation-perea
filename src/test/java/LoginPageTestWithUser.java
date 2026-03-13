@@ -27,8 +27,7 @@ public class LoginPageTestWithUser {
 
         driver=DriverFactory.createWebDriver(browser);
         driver.get("https://www.saucedemo.com/");
-        login = new LoginPage(driver);
-        logger.debug("Navigated to login page");
+        login = new LoginPage(driver).openPage();
     }
 
     @AfterEach
