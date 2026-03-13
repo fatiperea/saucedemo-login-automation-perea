@@ -56,7 +56,7 @@ public class LoginPageTestWithUser {
     void loginWithEmptyPasswordsMustFail(String browser){
 
         setUp(browser);
-        User user= UserCreator.emptyPassword(".");
+        User user= UserCreator.emptyPassword("standard_user");
         login.login(user);
 
         assertEquals("Password is required", login.getErrorMessage());
@@ -69,6 +69,10 @@ public class LoginPageTestWithUser {
 
         setUp(browser);
         for (User u : UserCreator.validUsers().toList()){
+
+            MainPage mainPage= login.login(u);
+            assertEquals("Swag Labs", mainPage.getPageTitle());
+            driver.navigate().to("https://www.saucedemo.com/inventory.html");
 
         }
         //login.login(user);
