@@ -39,11 +39,11 @@ public class Menu {
                 testClass = MainPageTest.class;
             }
             case 4 -> {
-                System.out.println("Running LoginPageTest...");
+                System.out.println("Running LoginPageTestWithUser...");
                 testClass = LoginPageTestWithUser.class;
             }
             case 5 -> {
-                System.out.println("Running MainPageTest...");
+                System.out.println("Running MainPageTestWithUser...");
                 testClass = MainPageTestWithUser.class;
             }
             default -> System.out.println("Invalid Option");
