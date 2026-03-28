@@ -12,9 +12,9 @@ import org.openqa.selenium.WebDriver;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 
-public class TestMainPage {
+public class MainPageTest {
 
-    private static final Logger logger = LogManager.getLogger(TestMainPage.class);
+    private static final Logger logger = LogManager.getLogger(MainPageTest.class);
     private static final String PASSWORD = "secret_sauce";
 
     @ParameterizedTest
