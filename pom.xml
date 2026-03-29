@@ -133,7 +133,11 @@
                 <version>3.2.5</version>
                 <configuration>
                     <forkCount>2</forkCount>
+                    <parallel>classes</parallel>
+                    <threadCount>4</threadCount>
+                    <perCoreThreadCount>false</perCoreThreadCount>
                     <reuseForks>true</reuseForks>
+                    <useUnlimitedThreads>false</useUnlimitedThreads>
                 </configuration>
             </plugin>
         </plugins>
