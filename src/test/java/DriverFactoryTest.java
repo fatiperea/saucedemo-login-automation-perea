@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 
-public class TestDriverFactory {
+public class DriverFactoryTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"chrome", "edge"})

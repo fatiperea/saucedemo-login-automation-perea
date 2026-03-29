@@ -9,14 +9,17 @@ public class DriverFactory {
 
     public static WebDriver createWebDriver(String browser) {
 
-        if (browser.equalsIgnoreCase("chrome")) {
-            WebDriverManager.chromedriver().setup();
-            return new ChromeDriver();
-        } else if (browser.equalsIgnoreCase("edge")) {
-            System.setProperty("webdriver.edge.driver", "drivers/msedgedriver.exe");
-            return new EdgeDriver();
+        switch (browser.toLowerCase()) {
+            case "chrome":
+                WebDriverManager.chromedriver().setup();
+                return new ChromeDriver();
+            case "edge":
+                //WebDriverManager.edgedriver().setup(); problems with WebDriverManager and Edge, so using manual setup
+                System.setProperty("webdriver.edge.driver", "drivers/msedgedriver.exe");
+                return new EdgeDriver();
+            default:
+                throw new IllegalArgumentException(browser + " Not supported");
         }
-        throw new IllegalArgumentException(browser + "Not supported");
 
     }
 }

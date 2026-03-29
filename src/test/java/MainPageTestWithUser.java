@@ -18,7 +18,7 @@ public class MainPageTestWithUser extends AbstractTest {
         setUp(browser);
 
         User user = UserCreator.validUser();
-        MainPage mainPage = new LoginPage(driver).login(user);
+        MainPage mainPage = new MainPage(driver);
         assertEquals(mainPage.getPAGE_URL(), driver.getCurrentUrl());
         assertThat(mainPage.getPageTitle(), containsString("Swag Labs"));
 

@@ -43,21 +43,21 @@ public class LoginPage extends AbstractPage {
         logger.info("Login button clicked");
     }
 
-    public MainPage login(String username, String password) {
+    public void login(String username, String password) {
         enterUsername(username);
         enterPassword(password);
         clickLogin();
-        return new MainPage(driver);
     }
 
-    public MainPage login(User user) {
+    public void login(User user) {
 
         enterUsername(user.getUsername());
         enterPassword(user.getPassword());
-
         clickLogin();
+    }
 
-        return new MainPage(driver);
+    public boolean isLoginSuccessful() {
+        return driver.getCurrentUrl().contains("inventory.html");
     }
 
     public void loginClearedPassword(User user) {
