@@ -41,7 +41,9 @@ public class MainPageTest {
         logger.debug("Navigated to Main page");
 
         LoginPage login = new LoginPage(driver);
-        MainPage mainPage = login.login(user, PASSWORD);
+        login.login(user, PASSWORD);
+
+        MainPage mainPage= new MainPage(driver);
 
         assertThat(mainPage.getPageTitle(), containsString("Swag Labs"));
 

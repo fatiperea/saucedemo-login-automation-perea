@@ -10,6 +10,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class LoginPageTestWithUser extends AbstractTest {
@@ -47,11 +48,13 @@ public class LoginPageTestWithUser extends AbstractTest {
         setUp(browser);
         LoginPage login = getLoginPage();
         User user = UserCreator.validUser();
-        MainPage mainPage = login.login(user);
+        login.login(user);
 
-        logger.info("Validating // UC-3: valid login" + mainPage.getPageTitle());
-        assertEquals("https://www.saucedemo.com/inventory.html", driver.getCurrentUrl());
-        assertEquals("Swag Labs", mainPage.getPageTitle());
+        assertTrue(login.isLoginSuccessful());
+        //assertEquals("https://www.saucedemo.com/inventory.html", driver.getCurrentUrl());
+
+        logger.info("Validating page title: " + driver.getTitle());
+        assertEquals("Swag Labs", driver.getTitle());
 
         closeDriver();
 
